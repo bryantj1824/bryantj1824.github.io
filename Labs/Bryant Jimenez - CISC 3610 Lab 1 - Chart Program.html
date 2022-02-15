@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<style type="text/css">
+
+		#main-canvas{
+			border:  solid 1px black;
+			height: 100vh;
+			width: 100vw;
+		}
+		
+	</style>
+
+	<canvas id="main-canvas"></canvas>
+
+	<script type="text/javascript">
+
+		var canvas = document.getElementById("main-canvas");
+		var ctx = canvas.getContext("2d");
+		
+		var fruits = [
+			{name:"Apple", quantity:20, color:"red"},
+			{name:"Orange", quantity:10, color:"orange"},
+			{name:"Banana", quantity:15, color:"yellow"},
+			{name:"Kiwi", quantity:3, color:"green"},
+			{name:"Blueberry", quantity:5, color:"blue"},
+			{name:"Grapes", quantity:8, color:"purple"},
+		];
+
+		var fruit_count = fruits.length;
+		var bar_width = canvas.width / fruit_count;
+
+		for( i = 0; i < fruit_count; i++ ){
+
+			let fruit =  fruits[i];
+			let name = fruit.name;
+			let quantity = fruit.quantity.toString();
+			let color = fruit.color;
+
+			let bar_height = (canvas.height/20)*quantity;
+
+			let x = bar_width*i;
+			let y = canvas.height - bar_height;
+
+			ctx.fillStyle = color;
+			ctx.fillRect(x, y, bar_width, bar_height);
+			ctx.fillStyle = "#000";
+			ctx.fillText(quantity, x + (bar_width/3), y + (bar_height/2));
+			ctx.fillText(name, x + (bar_width/5), y + bar_height - 2);
+		}
+
+
+	</script>
+
+</body>
+</html>
