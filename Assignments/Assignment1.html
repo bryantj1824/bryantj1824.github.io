@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bryant Jimenez - Assignment 1: Cartoon</title>
+	<style type="text/css">
+
+		#main-canvas{
+			border:  solid 1px black;
+			display: block;
+			margin: auto;
+		}
+
+		#back-btn{
+			background-color: #2980b9;
+			border: none;
+			color: white;
+			cursor: pointer;
+			bottom: 2em;
+			font-size: 16px;
+			padding: 1em 1.5em;
+			position: fixed;
+			right: 2em;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 style="text-align: center;">A simple cartoon!</h1>
+	<canvas id="main-canvas" width="600" height="300"></canvas>
+
+	<a href="javascript:history.back()">
+		<button id="back-btn">Back to main page</button>
+	</a>
+
+	<script type="text/javascript" src="../scripts/assignment1.js"></script>
+
+</body>
+</html>
