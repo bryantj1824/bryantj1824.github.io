@@ -5,10 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bryant Jimenez - Lab 2</title>
 	<style type="text/css">
+		body{
+			margin: 0px;
+			overflow: hidden;
+		}
+
+		.btn{
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 1em 1.5em;
+		}
+
 		#back-btn{
+			background-color: #2980b9;
+			color: white;
 			bottom: 2em;
 			position: fixed;
 			right: 2em;
+		}
+
+		#start-btn{
+			background-color: green;
+			color: white;
+			bottom: 2em;
+			position: fixed;
+			left: 2em;
 		}
 	</style>
 </head>
@@ -16,11 +38,14 @@
 
 	<canvas id="main-canvas"></canvas>
 
-	<button id="back-btn"></button>
+	<!-- Optional: Pass a number to the start_counter() function to set the max number to count to -->
+	<button id="start-btn" class="btn" onclick="start_counter()" >Start Counter</button>
 
-	<script type="text/javascript">
-		
-	</script>
+	<a href="javascript:history.back()">
+		<button id="back-btn" class="btn">Back to main page</button>
+	</a>
+
+	<script type="text/javascript" src="../scripts/lab2.js"></script>
 
 </body>
 </html>
