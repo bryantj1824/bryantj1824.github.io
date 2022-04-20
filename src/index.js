@@ -1,8 +1,6 @@
-const canvas = document.getElementById("main-canvas");
-
+const canvas = document.getElementById("sandbox");
 canvas.width = 1000;
 canvas.height = 700;
-
 let frame = 0;
 const frameEnd = 1440;
 
@@ -11,22 +9,22 @@ for (let i = 0; i < 36; i++) {
   const newFrame = new Image();
   newFrame.src =
     i < 10
-      ? `../Assets/images/assignment_two/black_hole_frames/frame_0${i}_delay-0.02s.png`
-      : `../Assets/images/assignment_two/black_hole_frames/frame_${i}_delay-0.02s.png`;
+      ? `./images/black_hole_frames/frame_0${i}_delay-0.02s.png`
+      : `./images/black_hole_frames/frame_${i}_delay-0.02s.png`;
   blackHoleSpriteMap.push(newFrame);
 }
 
 const backgroundImage = new Image();
-backgroundImage.src = "../Assets/images/assignment_two/800px_COLOURBOX1168602.jpg";
+backgroundImage.src = "./images/800px_COLOURBOX1168602.jpg";
 
 const rocketShipImage = new Image();
-rocketShipImage.src = "../Assets/images/assignment_two/rocket_ship.png";
+rocketShipImage.src = "./images/rocket_ship.png";
 
 const rightAstronautImage = new Image();
-rightAstronautImage.src = "../Assets/images/assignment_two/right_astronaut.png";
+rightAstronautImage.src = "./images/right_astronaut.png";
 
 const leftAstronautImage = new Image();
-leftAstronautImage.src = "../Assets/images/assignment_two/left_astronaut.png";
+leftAstronautImage.src = "./images/left_astronaut.png";
 
 const ctx = canvas.getContext("2d");
 
@@ -479,3 +477,8 @@ const interval = setInterval(() => {
   frame++;
 }, 1000 / 24);
 Update();
+
+document.getElementById("stop").addEventListener("click", () => {
+  clearInterval(interval);
+  throw new Error("Stop the animation");
+});
