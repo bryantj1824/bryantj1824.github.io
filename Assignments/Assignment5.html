@@ -21,16 +21,56 @@
 			right: 2em;
 		}
 
+		#main-container{
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100vh;
+			width: 100%;
+		}
+
+		#img-canvas{
+			display: block;
+			margin: auto;
+		}
+
 	</style>
 </head>
 <body>
 
-	<h1 style="align-items: center; display: flex; justify-content: center; height: 100vh; width: 100%;">In Progress</h1>
+	<div id="main-container">
+		<div class="container bg-light p-5 shadow">
+			
+			<div class="row">
+				<h3>Instructions</h3>
+				<p>This program uses <a href="https://pixabay.com/api/docs/ ">pixaby.com</a> api to search for random images with voice command. To use the program simply follow the instructions below.</p>
+				<ol>
+					<li>Click the speak button</li>
+					<li>Say the name of an object</li>
+					<li>Hit stop</li>
+					<li>The image will display on the canvas</li>
+				</ol>
+			</div>
+			<div>
+				<canvas id="img-canvas" width="300px" height="300px"></canvas>
+				<p class="text-center"><strong>Searching for:</strong></p>
+				<p id="speech-content" class="text-center m-0"></p>
+			</div>
+			<div class="row p-5 m-0">
+				<button id="speak-btn" class="btn btn-primary m-0">Speak</button>
+			</div>
+
+		</div>
+	</div>
 
 
 	<a href="javascript:history.back()">
 		<button id="back-btn">Back to main page</button>
 	</a>
+
+
+	<script type="text/javascript" src="../scripts/assignment5.js"></script>
 
 </body>
 </html>

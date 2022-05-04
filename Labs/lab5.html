@@ -22,15 +22,76 @@
 			position: fixed;
 			right: 2em;
 		}
+
+		#sound-machine-container{
+			align-items: center;
+			display: flex;
+			height: 100vh;
+			justify-content: center;
+			width: 100%;
+		}
+
+		#sound-machine{
+			background-color: #333;
+			border-radius: 2em;
+			display: flex;
+			flex-wrap: wrap;
+			margin: auto;
+			padding: 2em;
+			max-width: 95%;
+			width: 900px;
+		}
+
+		#sound-machine #buttons{
+			text-align: center;
+		}
+
+		#sound-machine #buttons button{
+			margin:2em;
+			padding: 2em;
+		}
 		
 	</style>
 
-
-	<h1 style="align-items: center; display: flex; justify-content: center; height: 100vh; width: 100%;">In Progress</h1>
+	<div id="sound-machine-container">
+		<div id="sound-machine">
+			<div class="col-6">
+				<img class="w-100" src="../Assets/images/sound_machine/dj-record.png">
+			</div>
+			<div id="buttons" class="col-6">
+				<p class="text-white">Click button to play sound</p>
+				<button class="btn btn-primary" onclick="play_audio(0);">1</button>
+				<button class="btn btn-primary" onclick="play_audio(1);">2</button>
+				<button class="btn btn-primary" onclick="play_audio(2);">3</button>
+				<button class="btn btn-primary" onclick="play_audio(3);">4</button>
+				<button class="btn btn-primary" onclick="play_audio(4);">5</button>
+			</div>
+		</div>
+	</div>
 
 	<a href="javascript:history.back()">
 		<button id="back-btn">Back to main page</button>
 	</a>
+
+
+	<script type="text/javascript">
+
+		var audio_dir = '../Assets/sounds/';
+
+		var audios = [
+			new Audio(audio_dir + 'Sound (1).wav'),
+			new Audio(audio_dir + 'Sound (2).wav'),
+			new Audio(audio_dir + 'Sound (3).wav'),
+			new Audio(audio_dir + 'Sound (4).wav'),
+			new Audio(audio_dir + 'Sound (5).wav'),
+		];
+	
+
+		function play_audio(audio_num){
+			audios[audio_num].play();
+		}
+
+	</script>
 
 </body>
 </html>
