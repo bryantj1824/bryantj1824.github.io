@@ -49,7 +49,7 @@ function start_counter( max_num = 10){
 			clearInterval(the_interval); 
 		}
 
-	}, 100);
+	}, 500);
 
 }
 
